@@ -1,7 +1,16 @@
+/*Tercera evaluacion parcial
+*Miguel Alejandre 
+3-D
+Universidad de colima
+Ingenieria de Software
+Estructura de datos
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 
-int busqueda(int n, struct nodo *nd);
+int busquedaEnArbol(int raiz, int busqueda);
 
 struct nodo{
 	int dato;
@@ -67,28 +76,29 @@ int main(){
 	insertarNodo(raiz, 5);
 	insertarNodo(raiz,1);
 	insertarNodo(raiz,4);
-
-	int n;
-	printf("Que numero deseas buscar?; ");
-	scanf("%d \n",&n);
-	int existe = busqueda(*nd, n);
-
 /*...........................*/
    printf("\n Imprimiendo inorden\n");
    inorden(raiz);
+/********************/
+ 	//declaramos el numero a buscar
+	int busqueda;
+	printf("Ingrese el numero a buscar; ");
+	scanf("%d",&busqueda);
 
-   int busqueda(nd,n);
-   printf("El numero si existe;\n");
+    int existe = busquedaEnArbol(raiz, busqueda);
+
     printf("\nSaliendo...\n");
+
+	printf("Posicion de %d en el arbol: %d", busqueda, existe);
     return 1;
 }
 
-int busqueda(int n, struct nodo *nd){
-	for (int x = 0; x<8, x++){
-		if(nodo[x] == n){
+int busquedaEnArbol(int raiz, int busqueda){
+	for (int x = 0; x<9, x++) {
+		if(raiz[x] == busqueda){
 			return x;
 		} else{
-			printf("NO existe\n");
+			printf("No existe\n");
 		}
 	}
 	return -1;
